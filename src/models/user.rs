@@ -10,6 +10,8 @@ pub struct User {
     pub city: Option<String>,
     pub birth_date: Option<String>,
     pub created_at: Option<String>,
+    pub avatar: Option<String>,
+    pub bio: Option<String>,
 }
 
 #[derive(Debug, Serialize, Deserialize, Clone)]
@@ -20,6 +22,8 @@ pub struct SafeUser {
     pub city: Option<String>,
     pub birth_date: Option<String>,
     pub created_at: Option<String>,
+    pub avatar: Option<String>,
+    pub bio: Option<String>,
 }
 
 impl From<User> for SafeUser {
@@ -31,6 +35,8 @@ impl From<User> for SafeUser {
             city: user.city,
             birth_date: user.birth_date,
             created_at: user.created_at,
+            avatar: user.avatar,
+            bio: user.bio,
         }
     }
 }
